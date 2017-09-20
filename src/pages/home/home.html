@@ -1,14 +1,58 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Sundar App
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding style="padding: 0px 10px;">
+  
+  
+  <ion-card *ngFor="let hero of heroes;let i = index" (click)='testf()' style="">
+
+<!--
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="img/marty-avatar.png">
+          <img src="https://images3.alphacoders.com/666/thumb-1920-666312.jpg">
+        </ion-avatar>
+        <h2>Marty McFly</h2>
+        <p>November 5, 1955</p>
+      </ion-item>
+-->
+
+<!--      <img src="https://images3.alphacoders.com/666/thumb-1920-666312.jpg">-->
+      <img src="http://lorempixel.com/400/200/city/{{i}}">
+        
+        <ion-card-content style="padding-bottom: 0px;">
+        <h1>
+            {{objModel.title}}
+        </h1>
+      </ion-card-content>
+      <ion-card-content>
+        <p class="post_desc">{{objModel.shortDesc}}</p>
+      </ion-card-content>
+
+      <ion-row>
+        <ion-col flex="50">
+          <button ion-button icon-left clear small>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>{{objModel.like}} Likes</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="text"></ion-icon>
+            <div>4 Comments</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center style="padding-top: 16px;">
+          <ion-note style="color: #000;">
+            11h ago
+          </ion-note>
+        </ion-col>
+      </ion-row>
+
+    </ion-card>
 </ion-content>
